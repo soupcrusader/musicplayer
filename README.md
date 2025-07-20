@@ -11,15 +11,12 @@ to run the program you need python3. I cant be assed explaining how to get pytho
 now, download the musicplayer file, pick the version that works for your OS. (assuming i make a version for anything other than mac)
 
 MAC INSTALLATION:
-once you have the mac version of the file, you want to place it in the bin folder inside your user folder. if you dont have one, thats ok. you just gotta make one through this command: mkdir ~/bin.
 
-<img width="483" height="160" alt="Screenshot 2025-07-20 at 12 40 00 pm" src="https://github.com/user-attachments/assets/63f84cc6-54f3-4436-a961-e05ea0e165c8" />
+first off, download the mac version of the file.
 
-move the musicplayer file from your downloads into the bin folder.
+once you have it downloaded, rename it to musicplayer.py. this makes it so you can run it through your terminal. 
 
-now, open up your terminal and type in "musicplayer (name of folder with mp3s)"
-
-<img width="571" height="141" alt="Screenshot 2025-07-20 at 12 29 06 pm" src="https://github.com/user-attachments/assets/4555c69e-c5b3-49ad-8799-208c023bc387" />
+now, open up your terminal and type in "python3 musicplayer (name of folder with mp3s)"
 
 it should now start playing one of the mp3s in the folder at random.
 
