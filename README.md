@@ -16,6 +16,7 @@ move the musicplayer file from your downloads into the bin folder.
 
 now, open up your terminal and type in "musicplayer (name of folder with mp3s)"
 below is a picture of what the command should look like.
+
 <img width="571" height="141" alt="Screenshot 2025-07-20 at 12 29 06 pm" src="https://github.com/user-attachments/assets/4555c69e-c5b3-49ad-8799-208c023bc387" />
 
 it should now start playing one of the mp3s in the folder. 
