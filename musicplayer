@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+# what we want to do:
+# find the folder with the mp3 files
+# read the mp3 files
+# select an mp3 at random
+# play the mp3 file
+# when the song finishes automatically find another random song
+# let the user pause, skip and exit
+# get jiggy wit it (critical)
+
+import os
+import sys
+import random
+import threading
+import pygame
+import time
+
+paused = False
+skipped = False
+quit_player = False
+
+def input_listener():
+    global paused, skipped, quit_player
+    while True:
+        cmd = input().strip().lower()
+        if cmd == 'p':
+            paused = not paused
+            if paused:
+                pygame.mixer.music.pause()
+                print("⏸️  Paused")
+            else:
+                pygame.mixer.music.unpause()
+                print("▶️  Resumed")
+        elif cmd == 's':
+            skipped = True
+            pygame.mixer.music.stop()
+            print("⏭️  Skipping...")
+        elif cmd == 'q':
+            quit_player = True
+            pygame.mixer.music.stop()
+            print("stoppin da beatz")
+            break
+
+def play_folder(folder_path):
+    global paused, skipped, quit_player
+
+    if not os.path.isdir(folder_path):
+        print(f"Error: {folder_path} is not a valid directory. put the folders destination, not a file within the folder.")
+        return
+
+    mp3_files = [f for f in os.listdir(folder_path) if f.lower().endswith(".mp3")]
+    if not mp3_files:
+        print("aint no mp3s in the folder, you probably got the wrong one also ~ = your drive/your user folder/ so if you are putting in both of those in the folder path, dont. ")
+        return
+
+    random.shuffle(mp3_files)
+    pygame.mixer.init()
+
+    print(f"\n Now playing music from: {folder_path}")
+    print("Press [p] to pause/resume, [s] to skip, [q] to quit. you gotta be in the terminal window to do so, becuase im not a good enough coder to make it work otherwise. NOW GET JJJJJIGGGY WIT IT!!!!\n")
+
+    threading.Thread(target=input_listener, daemon=True).start()
+
+    for filename in mp3_files:
+        if quit_player:
+            break
+
+        skipped = False
+        filepath = os.path.join(folder_path, filename)
+
+        try:
+            pygame.mixer.music.load(filepath)
+            pygame.mixer.music.play()
+            print(f"▶️  Now playing: {filename}")
+
+            while True:
+                if quit_player or skipped:
+                    break
+                if not paused and not pygame.mixer.music.get_busy():
+                    break
+                time.sleep(0.2)
+
+        except Exception as e:
+            print(f"Error playing {filename}: {e} dam idk what went wrong here, corrupted file or sum shii ig")
+            continue
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: songplayer <folder>")
+    else:
+        play_folder(sys.argv[1])
+
+         
