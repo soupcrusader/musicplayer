@@ -12,6 +12,8 @@ now, download the musicplayer file, pick the version that works for your OS. (as
 MAC INSTALLATION:
 once you have the mac version of the file, you want to place in in the bin folder inside your user folder. if you dont have one, thats ok. you just gotta make one through this command: mkdir ~/bin. there should now be a bin folder inside your user folder.
 
+<img width="619" height="170" alt="Screenshot 2025-07-20 at 12 34 32 pm" src="https://github.com/user-attachments/assets/0f6cbd46-13dc-495f-ba24-f648eefedfa0" />
+
 move the musicplayer file from your downloads into the bin folder.
 
 now, open up your terminal and type in "musicplayer (name of folder with mp3s)"
