@@ -2,7 +2,8 @@
 have you ever wanted to be able to play your spotify playlists offline, but dont wanna pay for premium? this program allows you to play mp3 files from a chosen folder with the ability to skip and shuffle.  for use with spotdl (https://github.com/spotDL/spotify-downloader), which allows you to convert your spotify playlists to mp3s.
 
 USE:
-first off, you wanna go to spotdl (see above link) and follow all the instructions there. once you have all of the mp3s you want to play, put them all in a folder and place the folder wherever you like. 
+
+first off, you wanna go to spotdl (see above link) and follow all the instructions there. once you have all of the mp3s you want to play, put them all in a folder somewhere. 
 
 you also need python3, i cant be assed explaining how to get python so just google a guide. honestly if you have a github account theres like a 95% chance you also have python installed so i probably dont need to explain this to you.
 
